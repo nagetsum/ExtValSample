@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xml:lang="ja" lang="ja">
+      
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title>ログイン</title>
+  
+  <link href="css/bootstrap.css" rel="stylesheet"/>
+  <link href="css/bootstrap-responsive.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="container">
+  <div class="page-header">
+      <h1>よくあるパスワード変更フォーム <small>extValの使用</small></h1>
+  </div>
+  
+  <div class="row">
+    <h:form id="changePasswordForm" styleClass="form-horizontal">
+      <div class="#{changePasswordFormStyle.selectStyle('changePasswordForm:currentPassword')}">
+        <label class="control-label" for="currentPassword">現在のパスワード</label>
+        <div class="controls">
+          <h:inputSecret id="currentPassword" value="#{userManageController.currentPassword}" label="現在のパスワード"/>
+          <h:panelGroup rendered="#{changePasswordFormStyle.isErrorMsgRendered('changePasswordForm:currentPassword')}">
+            <span class="help-inline"><h:message for="currentPassword"/></span>
+          </h:panelGroup>
+        </div>
+      </div>
+      <div class="#{changePasswordFormStyle.selectStyle('changePasswordForm:newPassword')}">
+        <label class="control-label" for="newPassword">新しいパスワード</label>
+        <div class="controls">
+          <h:inputSecret id="newPassword" value="#{userManageController.newPassword}" label="新しいパスワード"/>
+          <h:panelGroup rendered="#{changePasswordFormStyle.isErrorMsgRendered('changePasswordForm:newPassword')}">
+            <span class="help-inline"><h:message for="newPassword"/></span>
+          </h:panelGroup>
+        </div>
+      </div>
+      <div class="#{changePasswordFormStyle.selectStyle('changePasswordForm:newPasswordRetype')}">
+        <label class="control-label" for="newPasswordRetype">新しいパスワードを再入力</label>
+        <div class="controls">
+          <h:inputSecret id="newPasswordRetype" value="#{userManageController.newPasswordRetype}" label="新しいパスワードを再入力"/>
+          <h:panelGroup renndered="#{changePasswordFormStyle.isErrorMsgRendered('changePasswordForm:newPasswordRetype')}">
+            <span class="help-inline"><h:message for="newPasswordRetype"/></span>
+          </h:panelGroup>
+        </div>
+      </div>
+      <div class="control-group">
+        <div class="controls">
+          <h:commandButton styleClass="btn" action="#{userManageController.changePassword}" value="パスワード変更"/>
+        </div>
+      </div>
+    </h:form>
+  </div>
+</div>
+</body>
+</html>
