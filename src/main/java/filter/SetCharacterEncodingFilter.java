@@ -15,7 +15,7 @@ public class SetCharacterEncodingFilter implements Filter {
 	
 	@Override
 	public void init(FilterConfig filterConfig) throws ServletException {
-		// ˆ—‚È‚µ
+		// å‡¦ç†ãªã—
 	}
 
 	@Override
@@ -27,6 +27,6 @@ public class SetCharacterEncodingFilter implements Filter {
 
 	@Override
 	public void destroy() {
-		// ˆ—‚È‚µ
+		// å‡¦ç†ãªã—
 	}
 }
