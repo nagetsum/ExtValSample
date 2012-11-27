@@ -21,7 +21,7 @@ public class UserManageController {
 	private String newPasswordRetype;
 	
 	public String changePassword() {
-		// TODO パスワード変更処理	
+		// TODO 繝代せ繝ｯ繝ｼ繝牙､画峩蜃ｦ逅�
 		return null;
 	}
 
