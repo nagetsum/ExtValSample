@@ -1,8 +1,6 @@
 package controller;
 
 import javax.enterprise.inject.Model;
-import javax.faces.component.UIInput;
-import javax.faces.event.ValueChangeEvent;
 import javax.validation.constraints.NotNull;
 
 import org.apache.myfaces.extensions.validator.crossval.annotation.Equals;
@@ -32,11 +30,6 @@ public class UserManageController {
 	public void setCurrentPassword(String currentPassword) {
 		this.currentPassword = currentPassword;
 	}
-	
-	public void setCurrentPassword(ValueChangeEvent event) {
-		setCurrentPassword((String)event.getNewValue());
-		((UIInput) event.getComponent()).setLocalValueSet(false);
-	}
 
 	public String getNewPassword() {
 		return newPassword;
@@ -45,11 +38,6 @@ public class UserManageController {
 	public void setNewPassword(String newPassword) {
 		this.newPassword = newPassword;
 	}
-	
-	public void setNewPassword(ValueChangeEvent event) {
-		setNewPassword((String)event.getNewValue());
-		((UIInput) event.getComponent()).setLocalValueSet(false);
-	}
 
 	public String getNewPasswordRetype() {
 		return newPasswordRetype;
@@ -57,10 +45,5 @@ public class UserManageController {
 
 	public void setNewPasswordRetype(String newPasswordRetype) {
 		this.newPasswordRetype = newPasswordRetype;
-	}
-	
-	public void setNewPasswordRetype(ValueChangeEvent event) {
-		setNewPasswordRetype((String)event.getNewValue());
-		((UIInput) event.getComponent()).setLocalValueSet(false);
 	}
 }
