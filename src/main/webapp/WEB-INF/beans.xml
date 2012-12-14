@@ -1,3 +1,18 @@
 <?xml version="1.0"?>
 <beans xmlns="http://java.sun.com/xml/ns/javaee"
- xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://jboss.org/schema/cdi/beans_1_0.xsd"/>
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://jboss.org/schema/cdi/beans_1_0.xsd">
+  <!--
+    CheckTokenInterceptorを先に処理する優先度設定とする。
+    なぜならば、以下のように@CheckTokenと@SaveToken両方を付けたメソッドにおいて、
+    先にチェック処理を実行してから、トークン再生成をさせるため。
+    
+    @CheckToken
+    @SaveToken
+    public String action() { } 
+    
+  -->
+  <interceptors>
+    <class>token.CheckTokenInterceptor</class>
+    <class>token.SaveTokenInterceptor</class>
+  </interceptors>
+</beans>

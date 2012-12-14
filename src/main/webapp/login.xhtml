@@ -6,6 +6,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:s="http://agetsuma.net/facelets"
       xml:lang="ja" lang="ja">
       
 <head>
@@ -22,7 +24,7 @@
   </div>
   
   <div class="row">
-    <h:form id="changePasswordForm" styleClass="form-horizontal">
+    <s:tokenForm id="changePasswordForm" styleClass="form-horizontal">
       <div class="#{changePasswordFormStyle.selectStyle('changePasswordForm:currentPassword')}">
         <label class="control-label" for="currentPassword">現在のパスワード</label>
         <div class="controls">
@@ -52,10 +54,10 @@
       </div>
       <div class="control-group">
         <div class="controls">
-          <h:commandButton styleClass="btn" action="#{userManageController.changePassword}" value="パスワード変更"/>
+          <h:commandButton styleClass="btn" action="#{userManageController.changePassword()}" value="パスワード変更"/>
         </div>
       </div>
-    </h:form>
+    </s:tokenForm>
   </div>
 </div>
 </body>
